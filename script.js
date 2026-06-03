@@ -476,61 +476,6 @@ function(e){
 );
 
 // ===========================
-// SWIPE SUPPORT MOBILE
-// ===========================
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener(
-"touchstart",
-e=>{
-
-    touchStartX =
-
-    e.changedTouches[0]
-    .screenX;
-
-}
-);
-
-document.addEventListener(
-"touchend",
-e=>{
-
-    touchEndX =
-
-    e.changedTouches[0]
-    .screenX;
-
-    handleSwipe();
-
-}
-);
-
-function handleSwipe(){
-
-    if(
-        touchEndX <
-        touchStartX - 60
-    ){
-
-        nextSlide();
-
-    }
-
-    if(
-        touchEndX >
-        touchStartX + 60
-    ){
-
-        prevSlide();
-
-    }
-
-}
-
-// ===========================
 // HEART ANIMATION
 // ===========================
 
