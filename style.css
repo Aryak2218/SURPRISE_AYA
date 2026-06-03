@@ -278,35 +278,42 @@ ALBUM SCRAPBOOK POLAROID
     margin: 0 auto;       
 }
 
-.polaroid-card::before {
-    content: '';
-    position: absolute;
-    top: -14px;
-    width: 90px;
-    height: 26px;
-    /* Menggunakan warna selotip transparan estetik */
-    background: rgba(255, 230, 235, 0.6);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    transform: rotate(-4deg);
-    /* Efek garis robekan putus-putus di ujung selotip */
-    border-left: 2px dashed rgba(255, 77, 109, 0.25);
-    border-right: 2px dashed rgba(255, 77, 109, 0.25);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+.polaroid-card {
+    background: #fbfbfb;
+    padding: 16px 16px 35px 16px;
+    border-radius: 4px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+    width: 90%; 
+    max-width: 350px; /* Lebar maksimal card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    transition: transform 0.4s ease;
 }
-
 .story-slide:nth-child(even) .polaroid-card { transform: rotate(-2deg); }
 .story-slide:nth-child(odd) .polaroid-card { transform: rotate(2deg); }
 .polaroid-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
 
 .polaroid-img {
     width: 100%;
-    height: 400px;         
-    object-fit: cover;     
-    object-position: center center; 
+    /* Gunakan aspect-ratio agar tinggi menyesuaikan lebar */
+    /* 4/5 adalah rasio standar Polaroid, ubah ke 1/1 jika fotomu kotak */
+    aspect-ratio: 4 / 5; 
+    
+    object-fit: cover; 
+    object-position: center;
     border: 1px solid #f0f0f0;
     cursor: pointer;
-    background-color: #fbfbfb; 
+    background-color: #eee;
+}
+
+/* Khusus HP agar lebih ramping */
+@media(max-width: 480px) {
+    .polaroid-card {
+        padding: 12px 12px 30px 12px;
+        width: 85%;
+    }
 }
 
 /* Penyesuaian khusus untuk HP agar tidak terlalu gepeng */
