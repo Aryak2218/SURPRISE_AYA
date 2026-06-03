@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta name="theme-color" content="#ff4d6d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Untuk Sayangnya Aku ❤️
+</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- OPENING -->
+
+<div id="opening">
+
+    <div class="letter-box">
+
+        <h1>💌</h1>
+
+        <h2>FOR YOU</h2>
+
+        <h2>NOOR ALYA OKTAVIA ❤️</h2>
+
+        <p>
+            Ada sesuatu yang pengen aku sampein ke kamu...
+        </p>
+
+        <button onclick="startWebsite()">
+            Open ❤️
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PROGRESS -->
+
+<div class="progress-container">
+
+    <div id="progressBar"></div>
+
+</div>
+<div 
+    id="storyProgress">
+</div>
+
+<!-- MODAL FOTO -->
+
+<div id="imageModal">
+
+    <span onclick="closeModal()">&times;</span>
+
+    <img id="modalImg">
+
+</div>
+
+<!-- ========================= -->
+<!-- SLIDE 1 -->
+<!-- ========================= -->
+
+<section class="slide active">
+
+    <h1>
+        ❤️ Selamat Seminar Proposal Sayangnya Aku ❤️
+    </h1>
+
+    <p id="typing"></p>
+
+    <button onclick="nextSlide()">
+        Next ❤️
+    </button>
+
+</section>
+
+<!-- ========================= -->
+<!-- SLIDE 2 -->
+<!-- ========================= -->
+
+<section class="slide">
+
+    <h2>
+        🌸 Proud Of U Babe 🌸
+    </h2>
+
+    <p>
+
+        Selamat seminar proposal sayangku cintaku kekasihku adindaku istriku ❤️
+
+        Semua perjuangan, begadang, revisian, belajar, capek, nangis, kesel, stres, dan semua yang udah kamu lewatin akhirnya kebayar hari ini.
+
+        Aku tau banget perjalanan kamu nggak gampang.
+
+        Tapi kamu bisa buktiin kalau kamu kuat dan hebat.
+
+        Dan aku bangga banget sama kamu ❤️
+
+    </p>
+
+    <div class="nav">
+
+        <button onclick="prevSlide()">⬅️</button>
+
+        <button onclick="nextSlide()">❤️</button>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SLIDE 3 -->
+<!-- ========================= -->
+
+<section class="slide">
+
+    <h2>
+        Perjalanan Hidup Kamu Untuk Kedepannya
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            📖 Nentuin Judul Skripsi
+        </div>
+
+        <div class="timeline-item">
+            📚 Nyusun Proposal
+        </div>
+
+        <div class="timeline-item">
+            ☕ Begadang + Revisi + Bimbingan
+        </div>
+
+        <div class="timeline-item">
+            📄 Persiapan Seminar Proposal
+        </div>
+
+        <div class="timeline-item">
+            🎉 Seminar Proposal
+        </div>
+
+        <div class="timeline-item">
+            🎓 Seminar Hasil
+        </div>
+
+        <div class="timeline-item">
+            🎓 Pendadaran
+        </div>
+
+        <div class="timeline-item">
+            🎓 Wisuda
+        </div>
+
+        <div class="timeline-item">
+            💍 NIKAH SAMA AKU
+        </div>
+
+    </div>
+
+    <div class="nav">
+
+        <button onclick="prevSlide()">⬅️</button>
+
+        <button onclick="nextSlide()">❤️</button>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto1.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Aku suka senyum kamu, cantikk ❤️
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto2.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Yang ininihh cewe aku paling suka banget mam sushi❤️
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto3.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Yang ini lagi manyun pun cantik minta ampunn❤️
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto4.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Manyun Aja cantik, apalagii senyumm nihh udah ada buktinya.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto5.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Jadi uztadzah pin bisaa❤️
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto6.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Foto di mobil pun tetap cantikk❤️
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto7.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Kalo foto ini mah foto fav akuu hehe.. aku ganteng disana.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto8.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Yang ini pun aku ganteng kaya songkang. FIXX.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto10.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Apalagii abis sholat?!?!?!?!? jangan di tanya cantiknya mahh❤️
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto11.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            ini nihh salah satu foto kita di dalam satu hari tuh datengin buanyak fotobox di malang.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto12.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Nahh kalo yang ini foto pas aku di ajakin nongkrong sama teman sma mu di sengkaling.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto14.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Kalo yang ini nihh kita lagi jalan di MOG, terusss foto ini aku kamu dan mihu mihumu.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto15.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Aaaahh ini pertama kali kita meet, aku samperin kamu ke gondanglegi trus di fotoin tita.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto16.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Inii nihhh aku yang request fotobox pake costum dino hahaha, sekalian jalan sama sodek n pacarnya yang jatuh pas surprise in tuh.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto17.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Yang ini ni foto pertama kali kamu berani senderan di bahuku hahahahha.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto18.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Bhapsss yang ini mahh CALON ISTRI AKU.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto19.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Kalo ini mahh kamu lagi ngikutin gayaku ahahahha.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="slide story-slide">
+
+    <img
+    src="images/foto20.jpeg"
+    class="story-photo"
+    onclick="openModal(this)">
+
+    <div class="story-overlay">
+
+        <p>
+            Kalo ini mahh calon istri aku yang umurnya ngaku ngaku 17 tahun. tapiii jujur di foto ini kamu kaya 17 tahun. atau 10 tahun mngkin hahahah ohh 12 tahun si lebih tepatnya.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="slide">
+
+    <h2>
+        💌 Surat Cinta Untuk Noor Alya Oktavia 💌
+    </h2>
+
+    <div class="letter-content">
+
+        <p>
+
+            Sayangku 🤍
+
+            Aku cuma mau bilang kalau aku bangga banget sama kamu. 🥹❤️
+
+            Melihat kamu berhasil sampai di tahap seminar proposal ini bikin aku ikut bahagia, lega, dan terharu.
+
+            Aku tau perjalanan kamu sampai di titik ini nggak gampang. Aku lihat sendiri gimana kamu berjuang, capek, stres, begadang, revisi, bimbingan, dan banyak hal lain yang kadang bikin kamu pengen nyerah.
+
+            Tapi hebatnya, kamu tetap bertahan dan terus jalan sampai bisa ada di titik ini.
+
+            Dan jujur, aku bangga banget sama itu.
+
+            Yang bikin aku paling seneng bukan cuma karena kamu berhasil hari ini, tapi karena aku bisa ikut nemenin dan nyaksiin semua prosesnya.
+
+            Kita juga udah lewatin banyak hal bareng. Ada ketawa, ada sedih, ada marah, ada kecewa, ada seneng, ada capek, ada pasang surut yang kadang bikin kita sama-sama belajar.
+
+            Tapi dari semua itu, aku bersyukur banget karena sampai hari ini kita masih ada di sini.
+
+            Masih sama-sama.
+
+            Masih saling genggam.
+
+            Masih saling milih.
+
+            Aku bahagia banget punya kamu.
+
+            Aku bangga sama semua yang udah kamu capai.
+
+            Aku bangga sama semua perjuangan kamu.
+
+            Dan aku bangga karena aku bisa jadi bagian kecil dari perjalanan hidup kamu.
+
+            Aku pengen terus ketawa bareng kamu.
+
+            Jalan bareng kamu.
+
+            Tumbuh bareng kamu.
+
+            Belajar bareng kamu.
+
+            Dan ngelewatin semua hal yang bakal datang di hidup ini bareng-bareng.
+
+            Aku pengen tetep ada waktu kamu lagi bahagia.
+
+            Aku pengen tetep ada waktu kamu lagi sedih.
+
+            Aku pengen tetep ada waktu kamu lagi capek.
+
+            Aku pengen tetep ada waktu kamu lagi butuh seseorang buat dengerin cerita kamu.
+
+            Pokoknya selama kamu masih mau jalan bareng aku, aku akan terus milih kamu.
+
+            Hari ini.
+
+            Besok.
+
+            Minggu depan.
+
+            Tahun depan.
+
+            Dan semoga sampai kita tua nanti. ❤️
+
+            Terima kasih ya sayang.
+
+            Terima kasih udah hadir di hidup aku.
+
+            Terima kasih udah jadi seseorang yang begitu berarti buat aku.
+
+            Aku sayang banget sama kamu.
+
+            Dan aku bangga banget sama kamu.
+
+            Selamat seminar proposal ya cantiknya aku ❤️🥹🌹
+
+        </p>
+
+    </div>
+
+    <div class="nav">
+
+        <button onclick="prevSlide()">⬅️</button>
+
+        <button onclick="nextSlide()">❤️</button>
+
+    </div>
+
+</section>
+
+<section class="slide">
+
+    <h2>
+        ✨ Kalo Revisi Kamu Banyakk Bangett ✨
+    </h2>
+
+    <button onclick="showMotivation()">
+        Pencet Aku ❤️
+    </button>
+
+    <p id="motivationText"></p>
+
+    <div class="nav">
+
+        <button onclick="prevSlide()">⬅️</button>
+
+        <button onclick="nextSlide()">❤️</button>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SLIDE 12 -->
+<!-- PESAN RAHASIA -->
+<!-- ========================= -->
+
+<section class="slide">
+
+    <h2>
+        ❤️ Ada Pesan Rahasia Nih ❤️
+    </h2>
+
+    <button onclick="showLove()">
+        Dipencet Yaa ❤️
+    </button>
+
+    <p id="love"></p>
+
+    <div class="nav">
+
+        <button onclick="prevSlide()">⬅️</button>
+
+        <button onclick="nextSlide()">❤️</button>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SLIDE 13 -->
+<!-- PENUTUP -->
+<!-- ========================= -->
+
+<section class="slide">
+
+    <h1>
+        ❤️ I LOVE YOU ❤️
+    </h1>
+
+    <p>
+        Selamat Seminar Proposal Sayangku ❤️
+    </p>
+
+    <p>
+        Aku Bangga Sama Kamu ❤️
+    </p>
+
+    <p>
+        Aku Bahagia Punya Kamu ❤️
+    </p>
+
+    <p>
+        Dan Aku Akan Terus Milih Kamu ❤️
+    </p>
+
+    <p>
+        Sampai Kapanpun ❤️
+    </p>
+
+    <h2>
+        Forever With You 🌹
+    </h2>
+
+    <div class="nav">
+
+        <button onclick="prevSlide()">⬅️</button>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+<div class="music-indicator">
+    ❤️ For Noor Alya Oktavia ❤️
+</div>
+</body>
+</html>
