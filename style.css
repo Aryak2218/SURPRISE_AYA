@@ -297,16 +297,6 @@ ALBUM SCRAPBOOK POLAROID
     cursor: pointer;
     background-color: #fbfbfb; 
 }
-
-/* Penyesuaian khusus untuk HP agar tidak terlalu gepeng */
-@media(max-width:768px){
-    .polaroid-img { 
-        height: 350px;     /* Tinggi proporsional untuk layar HP */
-        object-fit: cover; 
-        object-position: center center;
-    }
-}
-
 .polaroid-caption {
     margin-top: 18px;
     color: #4a3b3d !important;
