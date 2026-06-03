@@ -290,7 +290,7 @@ ALBUM SCRAPBOOK POLAROID
 .polaroid-img {
     width: 100%;
     height: 500px;        /* Ditingkatkan dari 260px ke 300px agar foto lebih besar */
-    object-fit: contain;
+    object-fit: cover;
     border: 1px solid #f0f0f0;
     cursor: pointer;
 }
