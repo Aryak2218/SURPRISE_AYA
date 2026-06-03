@@ -256,11 +256,11 @@ ALBUM SCRAPBOOK POLAROID
 
 .polaroid-card {
     background: #fbfbfb;
-    padding: 16px 16px 35px 16px; /* Menambah padding bawah agar ruang tulisan lebih lega */
+    padding: 16px 16px 40px 16px; /* Menambah padding bawah agar ruang tulisan lebih lega */
     border-radius: 2px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
     width: 95%;           /* Diperlebar agar memenuhi layar */
-    max-width: 500px;     /* Ditingkatkan dari 310px ke 360px */
+    max-width: 350px;     /* Ditingkatkan dari 310px ke 360px */
     position: relative;
     display: flex;
     flex-direction: column;
