@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta name="theme-color" content="#ff4d6d">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff4d6d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Untuk Sayangnya Aku ❤️</title>
+    <title>Untuk Sayangnya Aku ❤️</title>
 
-<link rel="stylesheet" href="style.css">
-<!-- Menambahkan font Poppins dan Dancing Script untuk aksen estetik -->
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Menambahkan font Poppins, Dancing Script, dan Caveat untuk gaya tulisan tangan aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,12 +19,15 @@
 <!-- Elemen Audio Musik Latar Belakang -->
 <audio id="bgMusic" src="music/lagu.mp3" loop></audio>
 
+<!-- Tombol Kontrol Musik Pojok Layar -->
+<div id="musicControl" onclick="toggleMusic()">🎵</div>
+
 <div id="opening">
     <div class="letter-box">
         <h1>💌</h1>
         <h2 class="romantic-title">For You</h2>
         <h2>NOOR ALYA OKTAVIA ❤️</h2>
-        <p>Ada sesuatu yang pengen aku sampein ke kamu...</p>
+        <p>Ada hal yang harus aku sampein ke kamu...</p>
         <button onclick="startWebsite()">Open ❤️</button>
     </div>
 </div>
@@ -87,12 +90,12 @@
     <h2 class="romantic-title" style="font-size: 3.2rem; margin-bottom: 15px;">Sebentar Sayang... 🌸</h2>
     <div class="glass-card" style="background: rgba(255, 255, 255, 0.25); border: 1px solid rgba(255, 255, 255, 0.5); padding: 35px 25px;">
         <p style="font-size: 18px; font-weight: 500; line-height: 1.8; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            ✨ Sayang disimak dan didengar sampai habis ya... ✨
+            ✨ Sayang, disimak dan didengar sampai habis ya... ✨
         </p>
     </div>
     <div class="nav" style="margin-top: 30px;">
         <button onclick="prevSlide()">⬅️</button>
-        <button onclick="nextSlide()" class="pulse-btn">Mulai Cerita ❤️</button>
+        <button onclick="nextSlide()" class="pulse-btn">Pencet Sayaang ❤️</button>
     </div>
 </section>
 
@@ -107,35 +110,35 @@
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto2.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Yang ininihh cewe aku paling suka banget mam sushi❤️</div>
+        <div class="polaroid-caption">Yang ininihh, cewe aku paling suka banget mam sushi❤️</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto3.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Yang lagi manyun pun cantik minta ampunn❤️</div>
+        <div class="polaroid-caption">Yang lagi manyun ajaa cantiknyaa minta ampunn❤️</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto4.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Manyun aja cantik, apalagii senyumm nihh udah ada buktinya.</div>
+        <div class="polaroid-caption">Manyun aja cantik, apalagii senyumm. nihh udah ada buktinya.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto5.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Jadi uztadzah pin bisaa❤️</div>
+        <div class="polaroid-caption">Jadi uztadzah?? ohh jelass bisaa❤️</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto6.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Foto di mobil pun tetap cantikk❤️</div>
+        <div class="polaroid-caption">Foto di mobil?? tetap cantikk❤️</div>
     </div>
 </section>
 
@@ -163,63 +166,63 @@
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto11.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">ini nihh salah satu foto kita di dalam satu hari tuh datengin buanyak fotobox di malang.</div>
+        <div class="polaroid-caption">ini nihh salah satu foto kita, dalam satu hari tuh datengin buanyak photobox di malang.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto12.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Nahh kalo yang ini foto pas aku di ajakin nongkrong sama teman sma mu di sengkaling.</div>
+        <div class="polaroid-caption">Nahh... kalo yang ini foto pas aku di ajakin nongkrong sama teman SMA mu di sengkaling.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto14.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Kalo yang ini nihh kita lagi jalan di MOG, terusss foto ini aku kamu dan mihu mihumu.</div>
+        <div class="polaroid-caption">Kalo yang ini nihh kita lagi jalan di MOG, nahhh foto ini niihhh.... foto aku kamu dan mihu mihumu itu.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto15.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Aaaahh ini pertama kali kita meet, aku samperin kamu ke gondanglegi trus di fotoin tita.</div>
+        <div class="polaroid-caption">Aaaahh.... ini pertama kali kita meet, aku samperin kamu ke gondanglegi trus di fotoin tita.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto16.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Inii nihhh aku yang request fotobox pake costum dino hahaha, sekalian jalan sama sodek n pacarnya yang jatuh pas surprise in tuh.</div>
+        <div class="polaroid-caption">Inii nihhh..... aku yang request fotobox pake costum dino hahaha, sekalian jalan sama sodek n pacarnya yang jatuh pas surprise in tuh.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto17.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Yang ini ni foto pertama kali kamu berani senderan di bahuku hahahahha.</div>
+        <div class="polaroid-caption">Yang ini nihh.. foto pertama kali kamu berani senderan di bahuku hahahahha.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto18.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Bhapsss yang ini mahh CALON ISTRI AKU.</div>
+        <div class="polaroid-caption">Bhapsss..... yang ini mahh CALON ISTRI AKU.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto19.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Kalo ini mahh kamu lagi ngikutin gayaku ahahahha.</div>
+        <div class="polaroid-caption">Kalo ini mahh.... kamu lagi ngikutin gayaku ahahahha.</div>
     </div>
 </section>
 
 <section class="slide story-slide">
     <div class="polaroid-card">
         <img src="images/foto20.jpeg" class="polaroid-img" onclick="openModal(this)">
-        <div class="polaroid-caption">Kalo ini mahh calon istri aku yang umurnya ngaku ngaku 17 tahun. tapiii jujur di foto ini kamu kaya 17 tahun. atau 10 tahun mngkin hahahah ohh 12 tahun si lebih tepatnya.</div>
+        <div class="polaroid-caption">Kalo ini jangan ditanya... calon istri aku yang umurnya ngaku ngaku 17 tahun. tapiii jujur di foto ini kamu kaya 17 tahun. atau 10 tahun mngkin hahahah ohh 12 tahun si lebih tepatnya.</div>
     </div>
 </section>
 <!-- SLIDE FOTO END -->
@@ -230,12 +233,12 @@
     <div class="letter-content">
         <p>
             Sayangku 🤍<br><br>
-            Aku cuma mau bilang kalau aku bangga banget sama kamu. 🥹❤️ Melihat kamu berhasil sampai di tahap seminar proposal ini bikin aku ikut bahagia, lega, dan terharu.<br><br>
+            Aku cuma mau bilang kalau aku bangga banget sama kamu. 🥹❤️ Ngelihat kamu berhasil sampai di tahap seminar proposal ini bikin aku ikut bahagia, lega, dan terharu.<br><br>
             Aku tau perjalanan kamu sampai di titik ini nggak gampang. Aku lihat sendiri gimana kamu berjuang, capek, stres, begadang, revisi, bimbingan, dan banyak hal lain yang kadang bikin kamu pengen nyerah. Tapi hebatnya, kamu tetap bertahan dan terus jalan sampai bisa ada di titik ini. Dan jujur, aku bangga banget sama itu.<br><br>
-            Yang bikin aku paling seneng bukan cuma karena kamu berhasil hari ini, tapi karena aku bisa ikut nemenin dan nyaksiin semua prosesnya. Kita juga udah lewatin banyak hal bareng. Ada ketawa, ada sedih, ada marah, ada kecewa, ada seneng, ada capek, ada pasang surut yang kadang bikin kita sama-sama belajar. Tapi dari semua itu, aku bersyukur banget karena sampai hari ini kita masih ada di sini. Masih sama-sama. Masih saling genggam. Masih saling milih.<br><br>
+            Yang bikin aku paling seneng bukan cuma karena kamu berhasil hari ini, tapi karena aku bisa ikut nemenin dan nyaksiin semua prosesnya WALOPUN DARI JAUH YAA. Kita juga udah lewatin banyak hal bareng. Ada ketawa, ada sedih, ada marah, ada kecewa, ada seneng, ada capek, ada pasang surut yang kadang bikin kita sama-sama belajar. Tapi dari semua itu, aku bersyukur banget karena sampai hari ini kita masih ada di sini. Masih sama-sama. Masih saling genggam. Masih saling memilih satu sama lain.<br><br>
             Aku bahagia banget punya kamu. Aku bangga sama semua yang udah kamu capai. Aku bangga sama semua perjuangan kamu. Dan aku bangga karena aku bisa jadi bagian kecil dari perjalanan hidup kamu.<br><br>
-            Aku pengen terus ketawa bareng kamu. Jalan bareng kamu. Tumbuh bareng kamu. Belajar bareng kamu. Dan ngelewatin semua hal yang bakal datang di hidup ini bareng-bareng. Aku pengen tetep ada waktu kamu lagi bahagia. Aku pengen tetep ada waktu kamu lagi sedih. Aku pengen tetep ada waktu kamu lagi capek. Aku pengen tetep ada waktu kamu lagi butuh seseorang buat dengerin cerita kamu.<br><br>
-            Pokoknya selama kamu masih mau jalan bareng aku, aku akan terus milih kamu. Hari ini. Besok. Minggu depan. Tahun depan. Dan semoga sampai kita tua nanti. ❤️<br><br>
+            Aku pengen terus ketawa bareng kamu. Jalan bareng kamu. Tumbuh bareng kamu. Belajar bareng kamu. Dan ngelewatin semua hal yang bakal datang di hidup ini bareng-bareng. Aku pengen tetep ada waktu kamu lagi bahagia. Aku pengen tetep ada waktu kamu lagi sedih. Aku pengen tetep ada waktu kamu lagi capek. Aku pengen tetep ada waktu kamu lagi butuh seseorang buat dengerin cerita kamu. Bahkan.. aku pingin tetep ada walopun kamu lagi pingin sendiri.<br><br>
+            Pokoknya selama kamu masih mau jalan bareng aku, aku akan terus milih kamu. Hari ini. Besok. Minggu depan. Tahun depan. Dan semoga sampai selamanya. ❤️<br><br>
             Terima kasih ya sayang. Terima kasih udah hadir di hidup aku. Terima kasih udah jadi seseorang yang begitu berarti buat aku. Aku sayang banget sama kamu. Dan aku bangga banget sama kamu.<br><br>
             Selamat seminar proposal ya cantiknya aku ❤️🥹🌹
         </p>
@@ -246,9 +249,40 @@
     </div>
 </section>
 
+<!-- SLIDE INTERAKTIF: TOMBOL KABUR ("Will You Always Be Mine?") -->
+<section class="slide">
+    <h2 class="romantic-title" style="font-size: 2.8rem;">Satu Pertanyaan Jujur...</h2>
+    <p style="margin-bottom: 30px;">Tolong dijawab dengan jujur ya sayang! 🥺👉👈</p>
+    
+    <div class="glass-card" style="max-width: 450px; margin: 0 auto; padding: 40px 20px; position: relative;">
+        <h3 style="color: white; font-size: 18px; margin-bottom: 40px; line-height: 1.6;">
+            Kamu bakal terus nemenin dan sayang sama aku selamanya kan?
+        </h3>
+        <h4 style="color: white; font-size: 8px; margin-bottom: 40px; line-height: 1.6;">
+            coba deh.... pencett ngga kalo bisaaa
+        </h4>
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; min-height: 80px; position: relative; width: 100%;">
+            <!-- Tombol IYA -->
+            <button onclick="triggerConfetti(); alert('Yeayyy! Janji yaaa! I love you moreee! 🥰❤️'); nextSlide();" style="background: #ff4d6d; color: white; z-index: 10;">
+                Yessshhh!!!!!! ❤️
+            </button>
+
+            
+            <!-- Tombol ENGGAK (Akan kabur pindah posisi secara acak saat didekati) -->
+            <button id="runawayBtn" style="position: absolute; background: #77555a; color: white; transition: all 0.2s ease-out; z-index: 5; white-space: nowrap;">
+                Nggak 😜
+            </button>
+        </div>
+    </div>
+    <div class="nav" style="margin-top: 35px;">
+        <button onclick="prevSlide()">⬅️ Back</button>
+    </div>
+</section>
+
 <!-- SLIDE REVISI -->
 <section class="slide">
-    <h2 class="romantic-title" style="font-size: 2.5rem;">Kalo Revisian Banyak...</h2>
+    <h2 class="romantic-title" style="font-size: 2.5rem;">Kalo Revisian Kamu Banyak...</h2>
     <button onclick="showMotivation()" class="pulse-btn">Pencet Aku ❤️</button>
     <div class="glass-card" style="margin-top:20px; display:none;" id="motivationContainer">
         <p id="motivationText" style="font-size:15px; text-align:justify;"></p>
@@ -261,7 +295,7 @@
 
 <!-- SLIDE PESAN RAHASIA -->
 <section class="slide">
-    <h2 class="romantic-title" style="font-size: 2.8rem;">Pesan Rahasia Buat Kamu</h2>
+    <h2 class="romantic-title" style="font-size: 2.8rem;">Ada Pesan Rahasia Buat Kamu</h2>
     <button onclick="showLove()" class="pulse-btn">Dipencet Yaa ❤️</button>
     <div class="glass-card" style="margin-top:20px; display:none;" id="loveContainer">
         <p id="love" style="font-size:16px; font-family:'Dancing Script', cursive; font-size:1.8rem;"></p>
@@ -272,7 +306,7 @@
     </div>
 </section>
 
-<!-- SLIDE SERTIFIKAT KELULUSAN SEMPRO (DITAMBAHKAN CLASS certificate-slide) -->
+<!-- SLIDE SERTIFIKAT KELULUSAN SEMPRO -->
 <section class="slide certificate-slide">
     <h2 class="romantic-title" style="font-size: 2.8rem; margin-bottom: 5px;">A Special Award For You 🏆</h2>
     
@@ -280,7 +314,7 @@
         <div class="certificate-card">
             <div class="cert-border">
                 <div class="cert-header">🏆 PIAGAM PENGHARGAAN RESMI 🏆</div>
-                <div class="cert-number">No: 06/SEMPRO-BUCIN/ALYA-OKT/VI/2026</div>
+                <div class="cert-number">No: 06/PIAGAM-PACAR-TERBAIK/ALYA-OKT/VI/2026</div>
                 
                 <div class="cert-present">Piagam penghargaan ini diberikan dengan kehormatan penuh kepada:</div>
                 <div class="cert-name">Noor Alya Oktavia</div>
@@ -302,7 +336,7 @@
                 <div class="cert-footer">
                     <div class="cert-date">
                         <p><strong>Bertempat :</strong> Samarinda</p>
-                        <p><strong>Tanggal:</strong> 05 06 2026</p>
+                        <p><strong>Pada Tanggal: </strong> 05 06 2026</p>
                     </div>
                     <div class="cert-sign">
                         <p>Ketua Penguji Hati,</p>
@@ -364,8 +398,12 @@
         <p style="font-size: 16px; margin: 5px 0;">Sampai Kapanpun ❤️</p>
     </div>
     <h2 class="romantic-title" style="font-size: 2.5rem; margin-top:20px;">Forever With You 🌹</h2>
-    <div class="nav">
+    
+    <div class="nav" style="margin-top: 20px;">
         <button onclick="prevSlide()">⬅️</button>
+    </div>
+    <div style="margin-top: 25px;">
+        <p style="font-size: 2rem;">✨❤️✨</p>
     </div>
 </section>
 
