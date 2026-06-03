@@ -77,32 +77,49 @@ OPENING
 SLIDE
 ========================= */
 
-.slide{
-    display:none;
-    width:100%;
-    height:100vh;
-    padding:25px;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    animation:fade .7s ease;
-    overflow-y:auto; /* Mengizinkan scroll ke bawah jika konten melebihi tinggi HP */
+.slide {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh; /* Menggunakan dvh agar dinamis mengikuti tinggi layar HP terbaru */
+    padding: 30px 25px 60px 25px; /* Memberikan space di bawah agar tombol tidak mentok */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fade .7s ease;
+    overflow-y: auto; /* Mengizinkan scroll jika konten meluber */
+    -webkit-overflow-scrolling: touch;
+}
+.slide::before,
+.slide::after {
+    content: '';
+    margin: auto;
 }
 
-.slide.active{
-    display:flex;
+.slide.active {
+    display: flex;
 }
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+/* =========================
+BUTTON NAV (UPDATE)
+========================= */
+
+.nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px; /* Tambahan jarak bawah agar aman dari navigasi gesture HP */
+    flex-shrink: 0; /* Mencegah tombol gepeng atau mengecil */
 }
 
 /* =========================
