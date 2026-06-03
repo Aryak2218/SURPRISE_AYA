@@ -1,15 +1,14 @@
-// ===========================
-// STORY PROGRESS
-// ===========================
+// ==========================================
+// GLOBALS & VARIABLES
+// ==========================================
 let progressTimer;
-
-// ===========================
-// SLIDE SYSTEM & AUDIO CONTROL
-// ===========================
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const totalSlides = slides.length;
 
+// ==========================================
+// SLIDE SYSTEM & AUDIO CONTROL
+// ==========================================
 function showSlide(index){
     slides.forEach(slide=>{
         slide.classList.remove("active");
@@ -105,6 +104,25 @@ function updateProgress(){
     if(progressBar){ progressBar.style.width = progress + "%"; }
 }
 
+// ==========================================
+// AUDIO TOGGLE (MUTE / UNMUTE CONTROL)
+// ==========================================
+function toggleMusic() {
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicControl");
+    if (music && btn) {
+        if (music.paused) {
+            music.play();
+            btn.innerHTML = "🎵";
+            btn.classList.remove("muted");
+        } else {
+            music.pause();
+            btn.innerHTML = "🔇";
+            btn.classList.add("muted");
+        }
+    }
+}
+
 // ===========================
 // OPEN WEBSITE
 // ===========================
@@ -113,6 +131,7 @@ function startWebsite(){
     opening.style.opacity = "0";
     
     typing();
+    createPetals(); // Aktifkan kelopak bunga berguguran saat dibuka
     setTimeout(()=>{
         opening.style.display = "none";
     },1000);
@@ -256,13 +275,11 @@ for(let i = 0; i < 25; i++){
 // AMBIENT CONFETTI GENERATOR 🎉
 // ==========================================
 function triggerConfetti() {
-    // Bersihkan konfeti lama agar tidak menumpuk di memori browser
     const oldConfetti = document.querySelectorAll('.confetti');
     oldConfetti.forEach(c => c.remove());
 
     const colors = ['#ff4d6d', '#ff758f', '#ff8fa3', '#ffb3c1', '#ffd700', '#64dfdf', '#7400b8', '#4ea8de'];
     
-    // Membuat rintik hujan kertas konfeti sebanyak 80 helai
     for (let i = 0; i < 80; i++) {
         setTimeout(() => {
             const confetti = document.createElement('div');
@@ -277,12 +294,135 @@ function triggerConfetti() {
             
             document.body.appendChild(confetti);
             
-            // Hapus elemen otomatis setelah jatuh melewati batas bawah layar
             setTimeout(() => confetti.remove(), 4500);
         }, i * 35); 
     }
 }
 
+// Efek memunculkan hati kecil setiap kali layar diklik/ditekan
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'BUTTON' || e.target.id === 'musicControl') return;
+
+    const heartClick = document.createElement('div');
+    heartClick.innerHTML = '❤️';
+    heartClick.style.position = 'fixed';
+    heartClick.style.left = e.clientX + 'px';
+    heartClick.style.top = e.clientY + 'px';
+    heartClick.style.fontSize = Math.random() * 10 + 12 + 'px';
+    heartClick.style.pointerEvents = 'none';
+    heartClick.style.zIndex = '999999';
+    heartClick.style.transition = 'all 1s ease-out';
+    
+    document.body.appendChild(heartClick);
+
+    setTimeout(() => {
+        heartClick.style.transform = `translate(${(Math.random() - 0.5) * 40}px, -60px) scale(1.5)`;
+        heartClick.style.opacity = '0';
+    }, 50);
+
+    setTimeout(() => {
+        heartClick.remove();
+    }, 1050);
+});
+
+// ==========================================
+// AESTHETIC FLOATING PETALS GENERATOR 🌸
+// ==========================================
+function createPetals() {
+    setInterval(() => {
+        const petal = document.createElement('div');
+        const petalsList = ['🌸', '✨', '💖'];
+        petal.innerHTML = petalsList[Math.floor(Math.random() * petalsList.length)];
+        
+        petal.style.position = 'fixed';
+        petal.style.top = '-20px';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.fontSize = Math.random() * 12 + 10 + 'px';
+        petal.style.pointerEvents = 'none';
+        petal.style.zIndex = '1';
+        petal.style.opacity = Math.random() * 0.6 + 0.4;
+        
+        const duration = Math.random() * 4 + 4; 
+        petal.style.transition = `transform ${duration}s linear, opacity ${duration}s linear`;
+        
+        document.body.appendChild(petal);
+        
+        setTimeout(() => {
+            const drift = (Math.random() - 0.5) * 150;
+            petal.style.transform = `translate(${drift}px, 105vh) rotate(${Math.random() * 360}deg)`;
+            petal.style.opacity = '0';
+        }, 50);
+        
+        setTimeout(() => {
+            petal.remove();
+        }, duration * 1000 + 100);
+    }, 1200);
+}
+
+// ==========================================
+// MAGICAL CURSOR SPARKLES GENERATOR ✨
+// ==========================================
+function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.innerHTML = '✨';
+    sparkle.style.position = 'fixed';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    sparkle.style.fontSize = Math.random() * 8 + 10 + 'px';
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.zIndex = '99999';
+    sparkle.style.opacity = '1';
+    sparkle.style.transition = 'all 0.8s ease-out';
+    
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => {
+        sparkle.style.transform = `translate(${(Math.random() - 0.5) * 30}px, ${Math.random() * 20 + 20}px) scale(0.5)`;
+        sparkle.style.opacity = '0';
+    }, 50);
+    
+    setTimeout(() => {
+        sparkle.remove();
+    }, 850);
+}
+
+document.addEventListener('mousemove', function(e) {
+    if (Math.random() > 0.15) return; 
+    createSparkle(e.clientX, e.clientY);
+});
+
+document.addEventListener('touchmove', function(e) {
+    if (Math.random() > 0.15) return;
+    const touch = e.touches[0];
+    createSparkle(touch.clientX, touch.clientY);
+});
+
+// ========================================================
+// LOGIKA TOMBOL KABUR FULL LAYAR & NOTIFIKASI
+// ========================================================
+const runawayBtn = document.getElementById('runawayBtn');
+
+if (runawayBtn) {
+    // Fungsi untuk memindahkan tombol ke posisi acak
+    const moveButton = () => {
+        const windowWidth = window.innerWidth - runawayBtn.offsetWidth;
+        const windowHeight = window.innerHeight - runawayBtn.offsetHeight;
+        
+        const randomX = Math.floor(Math.random() * windowWidth);
+        const randomY = Math.floor(Math.random() * windowHeight);
+        
+        runawayBtn.style.left = randomX + "px";
+        runawayBtn.style.top = randomY + "px";
+    };
+
+    // Saat kursor mendekati tombol, tombol langsung kabur
+    runawayBtn.addEventListener('mouseenter', moveButton);
+    
+    // Saat tombol dipencet (siapa tahu berhasil dipencet)
+    runawayBtn.addEventListener('click', () => {
+        alert("Hayoloo error programnyaa. Aryaknya gamau programin sii 😜");
+    });
+}
 // ===========================
 // INIT
 // ===========================
