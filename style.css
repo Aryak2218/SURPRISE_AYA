@@ -87,6 +87,7 @@ SLIDE
     align-items:center;
     text-align:center;
     animation:fade .7s ease;
+    overflow-y:auto; /* Mengizinkan scroll ke bawah jika konten melebihi tinggi HP */
 }
 
 .slide.active{
@@ -178,23 +179,44 @@ TIMELINE
 }
 
 /* =========================
-INSTAGRAM STORY (HANYA BAGIAN INI YANG DIUBAH)
+POLAROID CARD SYSTEM (DIUBAH TOTAL UNTUK HP)
 ========================= */
 
-.story-slide{
-    position:relative;
-    padding:0;
-    overflow:hidden;
+.story-slide {
+    padding: 20px;
 }
 
-.story-photo{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:contain; /* Mengubah cover menjadi contain agar gambar mengecil/pas dan tidak terpotong */
-    z-index:1;
-    animation:zoomFade .8s ease;
+.polaroid-card {
+    background: white;
+    padding: 12px 12px 25px 12px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: zoomFade .8s ease;
+}
+
+.polaroid-img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover; /* Memastikan foto terpotong kotak estetik khas polaroid */
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+}
+
+.polaroid-caption {
+    margin-top: 15px;
+    color: #444 !important; /* Warna teks gelap agar kontras di atas kertas putih */
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 500;
+    width: 100%;
+    word-wrap: break-word;
 }
 
 @keyframes zoomFade{
@@ -206,27 +228,6 @@ INSTAGRAM STORY (HANYA BAGIAN INI YANG DIUBAH)
         opacity:1;
         transform:scale(1);
     }
-}
-
-.story-overlay{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    padding:30px 25px 60px; /* Mengurangi padding atas, menambah padding bawah agar teks naik */
-    background:linear-gradient(
-        transparent,
-        rgba(0,0,0,.85)
-    );
-    z-index:2;
-    max-height:40%;         /* Membatasi tinggi overlay caption */
-    overflow-y:auto;        /* Otomatis bisa di-scroll jika teks kepanjangan */
-}
-
-.story-overlay p{
-    color:white;
-    font-size:18px;
-    text-align:center;      /* Diubah ke tengah agar lebih estetik dan rapi */
 }
 
 /* =========================
@@ -393,7 +394,7 @@ MUSIC TEXT
 }
 
 /* =========================
-MOBILE (HANYA BAGIAN STORY OVERLAY YANG DIUBAH)
+MOBILE RESPONSIVE
 ========================= */
 
 @media(max-width:768px){
@@ -431,16 +432,18 @@ MOBILE (HANYA BAGIAN STORY OVERLAY YANG DIUBAH)
         font-size:14px;
     }
 
-    .story-overlay{
-        padding:30px 20px 75px; /* Jarak bawah ditambah (75px) agar teks terangkat melewati navbar HP Chrome/Safari */
-        max-height:45%;
-        overflow-y:auto;
+    .polaroid-card {
+        width: 95%;
+        max-width: 290px;
+        padding: 10px 10px 20px 10px;
     }
 
-    .story-overlay p{
-        font-size:15px;
-        line-height:1.6;
-        text-align:center;
+    .polaroid-img {
+        max-height: 240px;
+    }
+
+    .polaroid-caption {
+        font-size: 13px;
     }
 
     .letter-content{
