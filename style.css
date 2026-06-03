@@ -208,17 +208,20 @@ INSTAGRAM STORY
     }
 }
 
+/* BAGIAN YANG DIPERBAIKI */
 .story-overlay{
     position:absolute;
     bottom:0;
     left:0;
     width:100%;
-    padding:90px 25px 40px;
+    padding:30px 25px 30px; /* Padding disesuaikan */
     background:linear-gradient(
         transparent,
         rgba(0,0,0,.85)
     );
     z-index:2;
+    max-height:50%;       /* Batas tinggi agar tidak menutup layar */
+    overflow-y:auto;      /* Bisa di-scroll jika teks panjang */
 }
 
 .story-overlay p{
@@ -430,7 +433,7 @@ MOBILE
     }
 
     .story-overlay{
-        padding:110px 20px 35px;
+        padding:30px 20px 30px; /* Padding mobile disesuaikan */
     }
 
     .story-overlay p{
