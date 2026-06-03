@@ -259,8 +259,8 @@ ALBUM SCRAPBOOK POLAROID
     padding: 16px 16px 35px 16px; /* Menambah padding bawah agar ruang tulisan lebih lega */
     border-radius: 2px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    width: 98%;           /* Diperlebar agar memenuhi layar */
-    max-width: 400px;     /* Ditingkatkan dari 310px ke 360px */
+    width: 95%;           /* Diperlebar agar memenuhi layar */
+    max-width: 450px;     /* Ditingkatkan dari 310px ke 360px */
     position: relative;
     display: flex;
     flex-direction: column;
