@@ -259,72 +259,58 @@ AESTHETIC TIMELINE
 }
 
 /* =========================
-ALBUM SCRAPBOOK POLAROID 
+ALBUM SCRAPBOOK POLAROID
 ========================= */
-.story-slide { padding: 25px 20px; }
 
-.polaroid-card {
-    background: #fbfbfb;
-    padding: 16px 16px 35px 16px; 
-    border-radius: 4px; 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    width: 92%;           
-    max-width: 350px;     
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 6s ease; 
-    margin: 0 auto;       
+.story-slide{
+    padding:25px 20px;
+    justify-content:center;
+    align-items:center;
 }
 
-/* Container kartu agar menyesuaikan konten */
-.polaroid-card {
-    background: #fbfbfb;
-    padding: 15px; 
-    border-radius: 4px; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    width: 85vw; /* Mengikuti lebar layar HP */
-    max-width: 300px; /* Maksimal ukuran agar tidak terlalu besar */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.story-slide:nth-child(even) .polaroid-card { transform: rotate(-2deg); }
-.story-slide:nth-child(odd) .polaroid-card { transform: rotate(2deg); }
-.polaroid-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
-
-/* Cari dan ubah bagian ini */
-/* Foto yang tidak akan pernah terpotong */
-.polaroid-img {
-    width: 100%;
-    height: auto; /* PENTING: Biarkan tinggi mengikuti foto asli */
-    max-height: 60vh; /* Maksimal tinggi agar tidak memenuhi layar */
-    object-fit: contain; /* Foto akan tampil utuh, tidak ada bagian yang dibuang */
-    background-color: #fbfbfb; 
-    display: block;
-    border: 1px solid #eee;
+.polaroid-card{
+    background:#fbfbfb;
+    padding:15px;
+    border-radius:4px;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+    width:fit-content;
+    max-width:90vw;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transition:.3s ease;
+    margin:0 auto;
 }
 
-/* Penyesuaian khusus untuk HP agar tidak terlalu gepeng */
-@media(max-width:768px){
-    .polaroid-img { 
-        height: 350px;     
-        object-fit: cover; 
-        object-position: center center;
-    }
+.story-slide:nth-child(even) .polaroid-card{ transform:rotate(-2deg); }
+.story-slide:nth-child(odd) .polaroid-card{ transform:rotate(2deg); }
+
+.polaroid-card:hover{
+    transform:rotate(0deg) scale(1.03) !important;
+    z-index:5;
 }
 
-.polaroid-caption {
-    margin-top: 18px;
-    color: #4a3b3d !important;
-    font-size: 13.5px;
-    line-height: 1.6;
-    font-weight: 500;
-    width: 100%;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
+.polaroid-img{
+    display:block;
+    width:auto;
+    max-width:80vw;
+    height:auto;
+    max-height:65vh;
+    object-fit:contain;
+    border:1px solid #eee;
+    border-radius:2px;
+    background:#fff;
+}
+
+.polaroid-caption{
+    margin-top:15px;
+    color:#4a3b3d !important;
+    font-size:13.5px;
+    line-height:1.6;
+    font-weight:500;
+    text-align:center;
+    max-width:80vw;
 }
 
 /* =========================
@@ -566,9 +552,23 @@ MOBILE DEVICES FINETUNING
     #proudText{ font-size:15px; }
     button{ padding:12px 26px; font-size:14px; }
     
-    .polaroid-card { width: 85%; max-width: 255px; padding: 12px 12px 22px 12px; }
-    .polaroid-img { height: 210px; }
-    .polaroid-caption { font-size: 12px; margin-top: 12px; }
+    .polaroid-card{
+        width:fit-content;
+        max-width:90vw;
+        padding:12px;
+    }
+
+    .polaroid-img{
+        width:auto;
+        max-width:80vw;
+        height:auto;
+        max-height:60vh;
+    }
+
+    .polaroid-caption{
+        font-size:12px;
+        margin-top:12px;
+    }
     
     .timeline { max-width: 100%; padding-left: 25px; }
     .timeline-item { font-size: 13px; padding: 12px 15px; }
