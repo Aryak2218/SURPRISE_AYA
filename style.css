@@ -278,42 +278,38 @@ ALBUM SCRAPBOOK POLAROID
     margin: 0 auto;       
 }
 
+/* Card menyesuaikan konten secara otomatis */
 .polaroid-card {
     background: #fbfbfb;
-    padding: 16px 16px 35px 16px;
-    border-radius: 4px;
+    padding: 16px 16px 35px 16px; 
+    border-radius: 4px; 
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    width: 90%; 
-    max-width: 350px; /* Lebar maksimal card */
+    width: 90%;          
+    max-width: 350px;    
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    transition: transform 0.4s ease;
+    /* Hilangkan height: auto atau fixed jika ada */
 }
 .story-slide:nth-child(even) .polaroid-card { transform: rotate(-2deg); }
 .story-slide:nth-child(odd) .polaroid-card { transform: rotate(2deg); }
 .polaroid-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
 
+/* Cari dan ubah bagian ini */
 .polaroid-img {
     width: 100%;
-    /* Gunakan aspect-ratio agar tinggi menyesuaikan lebar */
-    /* 4/5 adalah rasio standar Polaroid, ubah ke 1/1 jika fotomu kotak */
+    /* Gunakan aspect-ratio agar tinggi box mengikuti lebar */
+    /* 4/5 adalah rasio portrait standar polaroid */
     aspect-ratio: 4 / 5; 
     
-    object-fit: cover; 
-    object-position: center;
+    /* Gunakan contain agar foto tidak pernah terpotong */
+    object-fit: contain; 
+    object-position: center; 
+    background-color: #fbfbfb;
     border: 1px solid #f0f0f0;
     cursor: pointer;
-    background-color: #eee;
-}
-
-/* Khusus HP agar lebih ramping */
-@media(max-width: 480px) {
-    .polaroid-card {
-        padding: 12px 12px 30px 12px;
-        width: 85%;
-    }
+    display: block;
 }
 
 /* Penyesuaian khusus untuk HP agar tidak terlalu gepeng */
