@@ -76,7 +76,7 @@ OPENING
 }
 
 /* ========================================================
-SLIDE ENGINE: EFEK TRANSISI ULTRA SMOOTH (BLUR FADE-IN) 🚀
+SLIDE ENGINE: EFEK TRANSISI ULTRA SMOOTH (BLUR FADE-IN)
 ======================================================== */
 .slide {
     display: none;
@@ -219,7 +219,7 @@ AESTHETIC TIMELINE
 }
 
 .timeline-item::before {
-    content: '📌';
+    content: '📝';
     position: absolute;
     left: -42px;
     top: 50%;
@@ -249,24 +249,24 @@ AESTHETIC TIMELINE
     background: #ff4d6d;
 }
 
-/* =========================
-ALBUM SCRAPBOOK POLAROID 
-========================= */
+/* =========================================
+ALBUM SCRAPBOOK POLAROID (RESPONSIVE FIX)
+========================================= */
 .story-slide { padding: 25px 20px; }
 
 .polaroid-card {
     background: #fbfbfb;
-    padding: 16px 16px 35px 16px; 
-    border-radius: 4px; /* Sedikit dilunakkan dari 2px ke 4px agar lebih elegan */
+    padding: 16px 16px 25px 16px; 
+    border-radius: 4px; 
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
     width: 92%;           
-    max-width: 350px;     /* Saya sarankan 450px agar tidak terlalu lebar di layar besar */
+    max-width: 350px;     
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.4s ease; /* Tambahkan ease agar gerakan lebih smooth */
-    margin: 0 auto;       /* Memastikan card selalu di tengah secara horizontal */
+    transition: transform 0.4s ease; 
+    margin: 0 auto;       
 }
 
 .polaroid-card::before {
@@ -290,21 +290,12 @@ ALBUM SCRAPBOOK POLAROID
 
 .polaroid-img {
     width: 100%;
-    height: 400px;         /* Tinggi yang cukup untuk kesan potret */
-    object-fit: cover;     /* Memastikan tidak ada ruang kosong/bolong */
-    object-position: center center; /* Memaksa fokus ke tengah agar wajah tidak terpotong */
+    height: auto;            /* Mengikuti tinggi proporsional foto */
+    max-height: 55vh;        /* Membatasi tinggi agar tidak melorot keluar layar desktop */
+    object-fit: contain;     /* Memastikan foto utuh 100% tanpa terpotong */
     border: 1px solid #f0f0f0;
     cursor: pointer;
     background-color: #fbfbfb; 
-}
-
-/* Penyesuaian khusus untuk HP agar tidak terlalu gepeng */
-@media(max-width:768px){
-    .polaroid-img { 
-        height: 350px;     /* Tinggi proporsional untuk layar HP */
-        object-fit: cover; 
-        object-position: center center;
-    }
 }
 
 .polaroid-caption {
@@ -449,7 +440,7 @@ LIVE TIMER BOX UI
 }
 
 /* =========================
-AESTHETIC CERTIFICATE STYLE 📜
+AESTHETIC CERTIFICATE STYLE
 ========================= */
 .certificate-container {
     width: 100%;
@@ -545,10 +536,10 @@ AESTHETIC CERTIFICATE STYLE 📜
     font-weight: 700;
 }
 
-/* =========================
-MOBILE DEVICES FINETUNING
-========================= */
-@media(max-width:768px){
+/* =====================================
+FINETUNING MEDIA QUERY (MOBILE DEVICES)
+===================================== */
+@media(max-width:768px) {
     .slide{ padding: 45px 20px 55px 20px; }
     .slide h1.romantic-title { font-size: 2.5rem !important; }
     .slide h2.romantic-title { font-size: 2.1rem !important; }
@@ -557,8 +548,17 @@ MOBILE DEVICES FINETUNING
     #proudText{ font-size:15px; }
     button{ padding:12px 26px; font-size:14px; }
     
-    .polaroid-card { width: 85%; max-width: 255px; padding: 12px 12px 22px 12px; }
-    .polaroid-img { height: 210px; }
+    /* Perbaikan responsivitas Polaroid di Mobile agar mengikuti ukuran asli foto */
+    .polaroid-card { 
+        width: 85%; 
+        max-width: 270px; 
+        padding: 12px 12px 22px 12px; 
+    }
+    .polaroid-img { 
+        height: auto;        /* Membebaskan height kaku 210px */
+        max-height: 48vh;    /* Menjaga foto vertikal tidak over-size melewati layar HP */
+        object-fit: contain; /* Foto utuh tanpa kepotong */
+    }
     .polaroid-caption { font-size: 12px; margin-top: 12px; }
     
     .timeline { max-width: 100%; padding-left: 25px; }
@@ -572,7 +572,6 @@ MOBILE DEVICES FINETUNING
     .countdown-box span { font-size: 24px; }
     .countdown-box p { font-size: 9px; margin-top: 2px; }
 
-    /* Penyesuaian sertifikat di mobile layar kecil */
     .certificate-container { max-width: 100%; }
     .certificate-card { padding: 14px; }
     .cert-border { padding: 15px 10px; }
@@ -584,7 +583,7 @@ MOBILE DEVICES FINETUNING
 }
 
 /* ==========================================
-ANIMASI HUJAN KONFETI SELEBRASI 🎉
+ANIMASI HUJAN KONFETI SELEBRASI
 ========================================== */
 .confetti {
     position: fixed;
