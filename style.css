@@ -259,8 +259,8 @@ ALBUM SCRAPBOOK POLAROID
     padding: 16px 16px 35px 16px; 
     border-radius: 4px; /* Sedikit dilunakkan dari 2px ke 4px agar lebih elegan */
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    width: 95%;           
-    max-width: 250px;     /* Saya sarankan 450px agar tidak terlalu lebar di layar besar */
+    width: 92%;           
+    max-width: 350px;     /* Saya sarankan 450px agar tidak terlalu lebar di layar besar */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -290,13 +290,23 @@ ALBUM SCRAPBOOK POLAROID
 
 .polaroid-img {
     width: 100%;
-    height: 500px;         /* Tinggi yang cukup untuk kesan potret */
+    height: 400px;         /* Tinggi yang cukup untuk kesan potret */
     object-fit: cover;     /* Memastikan tidak ada ruang kosong/bolong */
     object-position: center center; /* Memaksa fokus ke tengah agar wajah tidak terpotong */
     border: 1px solid #f0f0f0;
     cursor: pointer;
     background-color: #fbfbfb; 
 }
+
+/* Penyesuaian khusus untuk HP agar tidak terlalu gepeng */
+@media(max-width:768px){
+    .polaroid-img { 
+        height: 350px;     /* Tinggi proporsional untuk layar HP */
+        object-fit: cover; 
+        object-position: center center;
+    }
+}
+
 .polaroid-caption {
     margin-top: 18px;
     color: #4a3b3d !important;
