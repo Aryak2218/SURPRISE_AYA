@@ -13,19 +13,12 @@ body{
 }
 
 /* =========================
-BACKGROUND
+BACKGROUND GRADIENT SOFT
 ========================= */
-
 body{
-    background:linear-gradient(
-        -45deg,
-        #ff9a9e,
-        #fad0c4,
-        #ffd1ff,
-        #ffc3a0
-    );
-    background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
+    background: linear-gradient(-45deg, #ff9a9e, #fecfef, #feada6, #ffc3a0);
+    background-size: 400% 400%;
+    animation: bgMove 15s ease infinite;
 }
 
 @keyframes bgMove{
@@ -35,441 +28,570 @@ body{
 }
 
 /* =========================
+TEXT AKSEN ROMANTIS
+========================= */
+.romantic-title {
+    font-family: 'Dancing Script', cursive !important;
+    background: linear-gradient(to right, #ffffff, #ffe3e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 4px 15px rgba(255, 77, 109, 0.3) !important;
+    font-weight: 700;
+}
+
+/* =========================
 OPENING
 ========================= */
-
 #opening{
     position:fixed;
     inset:0;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#fff0f5;
+    background: linear-gradient(135deg, #fff5f6 0%, #ffd6dc 100%);
     z-index:99999;
-    transition:1s;
+    transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .letter-box{
     width:90%;
     max-width:420px;
-    background:white;
-    padding:40px;
-    border-radius:25px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding:40px 30px;
+    border-radius:30px;
     text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
+    box-shadow:0 25px 50px rgba(255, 77, 109, 0.15);
+    border: 1px solid rgba(255,255,255,0.6);
 }
 
-.letter-box h1{
-    font-size:60px;
+.letter-box h1{ font-size:65px; animation: bounce 2s infinite; }
+.letter-box h2{ color:#ff4d6d; margin-top:10px; font-weight: 700;}
+.letter-box p{ margin-top:15px; color:#77555a; font-size: 14px;}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-.letter-box h2{
-    color:#ff4d6d;
-    margin-top:10px;
-}
-
-.letter-box p{
-    margin-top:15px;
-    color:#666;
-}
-
-/* =========================
-SLIDE
-========================= */
-
+/* ========================================================
+SLIDE ENGINE: EFEK TRANSISI ULTRA SMOOTH (BLUR FADE-IN) 🚀
+======================================================== */
 .slide {
     display: none;
+    opacity: 0;
     width: 100%;
     height: 100vh;
-    height: 100dvh; /* Menggunakan dvh agar dinamis mengikuti tinggi layar HP terbaru */
-    padding: 30px 25px 60px 25px; /* Memberikan space di bawah agar tombol tidak mentok */
+    height: 100dvh;
+    padding: 50px 24px 65px 24px;
     flex-direction: column;
     align-items: center;
+    justify-content: safe center;
     text-align: center;
-    animation: fade .7s ease;
-    overflow-y: auto; /* Mengizinkan scroll jika konten meluber */
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-}
-.slide::before,
-.slide::after {
-    content: '';
-    margin: auto;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-.slide.active {
-    display: flex;
+/* Trigger animasi ketika halaman mendapatkan kelas active */
+.slide.active { 
+    display: flex; 
+    animation: premiumSmoothFadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-@keyframes fade {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+@keyframes premiumSmoothFadeIn {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.96); 
+        filter: blur(8px); 
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    100% { 
+        opacity: 1; 
+        transform: scale(1); 
+        filter: blur(0); 
     }
 }
+
 /* =========================
-BUTTON NAV (UPDATE)
+PREMIUM GLASS CARD
 ========================= */
+.glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 650px;
+    margin: 15px 0;
+}
 
+/* =========================
+NAV BUTTONS
+========================= */
 .nav {
     display: flex;
-    gap: 15px;
+    gap: 18px;
     margin-top: 25px;
-    margin-bottom: 20px; /* Tambahan jarak bawah agar aman dari navigasi gesture HP */
-    flex-shrink: 0; /* Mencegah tombol gepeng atau mengecil */
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    z-index: 10;
 }
 
 /* =========================
-TEXT
+BUTTONS TAMPILAN BARU
 ========================= */
-
-.slide h1{
-    color:white;
-    font-size:40px;
-    text-shadow:0 0 15px rgba(255,255,255,.8);
+button {
+    border: none;
+    background: white;
+    color: #ff4d6d;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.slide h2{
-    color:white;
-    margin-bottom:20px;
-    text-shadow:0 0 10px rgba(255,255,255,.7);
+button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(255, 77, 109, 0.35);
+    background: #ff4d6d;
+    color: white;
 }
 
-.slide p{
-    color:white;
-    max-width:900px;
-    line-height:1.8;
+.pulse-btn {
+    animation: buttonPulse 2s infinite;
 }
 
-#typing{
-    margin-top:20px;
-    font-size:20px;
+@keyframes buttonPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
 /* =========================
-BUTTON
+TEXT GENERAL
 ========================= */
-
-button{
-    border:none;
-    background:white;
-    color:#ff4d6d;
-    font-weight:bold;
-    padding:14px 30px;
-    border-radius:50px;
-    cursor:pointer;
-    margin-top:20px;
-    transition:.3s;
+.slide p {
+    color: white;
+    max-width: 650px;
+    line-height: 1.8;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    font-size: 16px;
 }
 
-button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(255,255,255,.4);
-}
-
-.nav{
-    display:flex;
-    gap:15px;
-    margin-top:25px;
+#typing {
+    font-size: 20px;
+    font-weight: 400;
+    min-height: 60px;
+    max-width: 500px;
 }
 
 /* =========================
-TIMELINE
+AESTHETIC TIMELINE
 ========================= */
-
-.timeline{
-    width:100%;
-    max-width:700px;
+.timeline {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.6);
+    text-align: left;
+    margin: 10px auto;
 }
 
-.timeline-item{
-    background:white;
-    color:#ff4d6d;
-    padding:15px;
-    margin:10px 0;
-    border-radius:15px;
-    font-weight:600;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+.timeline-item {
+    background: rgba(255, 255, 255, 0.85);
+    color: #ff4d6d;
+    padding: 14px 20px;
+    margin: 14px 0;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: 0.3s;
+}
+
+.timeline-item::before {
+    content: '📌';
+    position: absolute;
+    left: -42px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.highlight-item {
+    background: linear-gradient(135deg, #fff0f3 0%, #ffb3c1 100%);
+    color: #ff4d6d;
+    font-weight: 700;
+    border: 1px solid rgba(255, 77, 109, 0.3);
+    transform: scale(1.02);
+}
+
+.highlight-item::before {
+    content: '💍';
+    font-size: 13px;
+    background: #ff4d6d;
 }
 
 /* =========================
-POLAROID CARD SYSTEM (DIUBAH TOTAL UNTUK HP)
+ALBUM SCRAPBOOK POLAROID 
 ========================= */
-
-.story-slide {
-    padding: 20px;
-}
+.story-slide { padding: 25px 20px; }
 
 .polaroid-card {
-    background: white;
-    padding: 12px 12px 25px 12px;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: #fbfbfb;
+    padding: 14px 14px 30px 14px;
+    border-radius: 2px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
     width: 90%;
-    max-width: 320px;
+    max-width: 310px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: zoomFade .8s ease;
+    transition: transform 0.4s;
 }
+
+.polaroid-card::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    width: 85px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    transform: rotate(-3deg);
+    border-left: 1px dashed rgba(0,0,0,0.05);
+    border-right: 1px dashed rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.story-slide:nth-child(even) .polaroid-card { transform: rotate(-2deg); }
+.story-slide:nth-child(odd) .polaroid-card { transform: rotate(2deg); }
+.polaroid-card:hover { transform: rotate(0deg) scale(1.03) !important; z-index: 5; }
 
 .polaroid-img {
     width: 100%;
-    height: auto;
-    max-height: 280px;
-    object-fit: cover; /* Memastikan foto terpotong kotak estetik khas polaroid */
-    border: 1px solid #eaeaea;
+    height: 260px;
+    object-fit: cover;
+    border: 1px solid #f0f0f0;
     cursor: pointer;
 }
 
 .polaroid-caption {
-    margin-top: 15px;
-    color: #444 !important; /* Warna teks gelap agar kontras di atas kertas putih */
-    font-size: 14px;
-    line-height: 1.5;
-    text-align: center;
+    margin-top: 18px;
+    color: #4a3b3d !important;
+    font-size: 13.5px;
+    line-height: 1.6;
     font-weight: 500;
     width: 100%;
-    word-wrap: break-word;
-}
-
-@keyframes zoomFade{
-    from{
-        opacity:0;
-        transform:scale(1.05);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* =========================
-COUNTER
+PROUD MESSAGE TEXT ROTATOR
 ========================= */
-
-#daysCounter{
-    font-size:60px;
-    color:white;
-    text-shadow:0 0 15px rgba(255,255,255,.8);
-    margin:20px 0;
+#proudText {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(255, 77, 109, 0.4);
+    margin-top: 15px;
+    max-width: 550px;
+    font-style: italic;
 }
 
 /* =========================
-PROUD TEXT
+LETTER BOX JURNAL
 ========================= */
-
-#proudText{
-    min-height:120px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-size:28px;
-    text-shadow:0 0 10px rgba(255,255,255,.7);
+.letter-content {
+    width: 100%;
+    max-width: 650px;
+    max-height: 52vh;
+    overflow-y: auto;
+    padding: 30px 25px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.1);
 }
+
+.letter-content p { text-align: justify; font-size: 15px; }
+.letter-content::-webkit-scrollbar { width: 5px; }
+.letter-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.6); border-radius: 10px; }
 
 /* =========================
-LETTER
+IMAGE MODAL FULLSCREEN
 ========================= */
-
-.letter-content{
-    width:100%;
-    max-width:900px;
-    max-height:60vh;
-    overflow-y:auto;
-    padding:25px;
-    border-radius:25px;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(10px);
-}
-
-.letter-content p{
-    text-align:left;
-}
-
-.letter-content::-webkit-scrollbar{
-    width:6px;
-}
-
-.letter-content::-webkit-scrollbar-thumb{
-    background:white;
-    border-radius:20px;
-}
-
-/* =========================
-MODAL FOTO
-========================= */
-
 #imageModal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.95);
+    background:rgba(15, 10, 12, 0.96);
     z-index:999999;
+    backdrop-filter: blur(8px);
 }
 
 #imageModal img{
     display:block;
-    max-width:95%;
-    max-height:90%;
+    max-width:90%;
+    max-height:82%;
     margin:auto;
-    margin-top:30px;
-    border-radius:20px;
+    margin-top:7vh;
+    border-radius:12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
 }
 
-#imageModal span{
-    position:absolute;
-    top:10px;
-    right:25px;
-    color:white;
-    font-size:50px;
-    cursor:pointer;
+@keyframes zoomIn { from { transform: scale(0.9); opacity:0; } to { transform: scale(1); opacity:1; } }
+#imageModal span{ position:absolute; top:20px; right:30px; color:white; font-size:45px; cursor:pointer; }
+
+/* =========================
+TOP PROGRESS BAR LINE
+========================= */
+.progress-container{ position:fixed; top:0; left:0; width:100%; height:4px; background:rgba(255,255,255,0.15); z-index:999; }
+#progressBar{ width:0%; height:100%; background: linear-gradient(to right, #ffffff, #ffb3c1); transition:.4s; }
+
+/* =========================
+STORY AUTOPLAY LINE PROGRESS
+========================= */
+#storyProgress{ position:fixed; top:8px; left:12px; width:calc(100% - 24px); height:4px; background:rgba(255,255,255,0.25); border-radius:10px; overflow:hidden; z-index:99999; }
+#storyFill{ width:0%; height:100%; background:white; }
+
+/* =========================
+FLOATING HEARTS
+========================= */
+.heart{ position:fixed; font-size:22px; pointer-events:none; animation:fall linear infinite; z-index: 1;}
+@keyframes fall{ from{ transform:translateY(-50px) scale(0.8); } to{ transform:translateY(105vh) scale(1.2); } }
+
+/* =========================
+LIVE TIMER BOX UI
+========================= */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 18px 12px;
+    border-radius: 20px;
+    min-width: 85px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 30px rgba(255, 77, 109, 0.1);
+}
+
+.countdown-box span {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    display: block;
+    text-shadow: 0 2px 10px rgba(255, 77, 109, 0.2);
+}
+
+.countdown-box p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.9) !important;
+    margin-top: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.08); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.08); }
+    80% { transform: scale(1); }
 }
 
 /* =========================
-PROGRESS BAR
+AESTHETIC CERTIFICATE STYLE 📜
 ========================= */
-
-.progress-container{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:5px;
-    background:rgba(255,255,255,.2);
-    z-index:999;
+.certificate-container {
+    width: 100%;
+    max-width: 580px;
+    margin: 10px auto;
+    padding: 5px;
 }
 
-#progressBar{
-    width:0%;
-    height:100%;
-    background:white;
-    transition:.5s;
+.certificate-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    color: #4a3b3d;
+    position: relative;
+}
+
+.cert-border {
+    border: 3px double #ff4d6d;
+    padding: 25px 20px;
+    border-radius: 10px;
+}
+
+.cert-header {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ff4d6d;
+    letter-spacing: 2px;
+}
+
+.cert-present {
+    font-size: 13px;
+    margin-top: 15px;
+    font-style: italic;
+    color: #7c6265;
+}
+
+.cert-name {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 2.8rem;
+    color: #ff4d6d;
+    margin: 8px 0;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 77, 109, 0.1);
+}
+
+.cert-divider {
+    width: 55%;
+    height: 1.5px;
+    background: linear-gradient(to right, transparent, #ff4d6d, transparent);
+    margin: 12px auto;
+}
+
+.cert-body {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #554446;
+}
+
+.cert-highlight {
+    font-weight: 700;
+    color: #ff4d6d;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.cert-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.cert-date p {
+    color: #665255 !important;
+    font-weight: 500;
+}
+
+.cert-sign p {
+    text-align: center;
+    color: #665255 !important;
+}
+
+.signature-name {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.5rem;
+    color: #ff4d6d;
+    margin-top: 5px;
+    font-weight: 700;
 }
 
 /* =========================
-STORY PROGRESS
+MOBILE DEVICES FINETUNING
 ========================= */
-
-#storyProgress{
-    position:fixed;
-    top:10px;
-    left:10px;
-    width:calc(100% - 20px);
-    height:4px;
-    background:rgba(255,255,255,.3);
-    border-radius:20px;
-    overflow:hidden;
-    z-index:99999;
-}
-
-#storyFill{
-    width:0%;
-    height:100%;
-    background:white;
-}
-
-/* =========================
-HEARTS
-========================= */
-
-.heart{
-    position:fixed;
-    font-size:20px;
-    pointer-events:none;
-    animation:fall linear infinite;
-}
-
-@keyframes fall{
-    from{
-        transform:translateY(-100px);
-    }
-    to{
-        transform:translateY(110vh);
-    }
-}
-
-/* =========================
-MUSIC TEXT
-========================= */
-
-.music-indicator{
-    position:fixed;
-    bottom:15px;
-    right:15px;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(10px);
-    color:white;
-    padding:10px 15px;
-    border-radius:30px;
-    font-size:13px;
-    z-index:999;
-}
-
-/* =========================
-MOBILE RESPONSIVE
-========================= */
-
 @media(max-width:768px){
+    .slide{ padding: 45px 20px 55px 20px; }
+    .slide h1.romantic-title { font-size: 2.5rem !important; }
+    .slide h2.romantic-title { font-size: 2.1rem !important; }
+    .slide p{ font-size:14.5px; }
+    #typing{ font-size:17px; min-height: 55px;}
+    #proudText{ font-size:15px; }
+    button{ padding:12px 26px; font-size:14px; }
+    
+    .polaroid-card { width: 85%; max-width: 255px; padding: 12px 12px 22px 12px; }
+    .polaroid-img { height: 210px; }
+    .polaroid-caption { font-size: 12px; margin-top: 12px; }
+    
+    .timeline { max-width: 100%; padding-left: 25px; }
+    .timeline-item { font-size: 13px; padding: 12px 15px; }
+    
+    .letter-content{ max-height:48vh; padding: 20px 18px; }
+    .letter-content p { font-size: 14px; }
+    
+    .countdown-container { gap: 10px; }
+    .countdown-box { min-width: 70px; padding: 12px 6px; border-radius: 16px; }
+    .countdown-box span { font-size: 24px; }
+    .countdown-box p { font-size: 9px; margin-top: 2px; }
 
-    .slide{
-        padding:20px;
+    /* Penyesuaian sertifikat di mobile layar kecil */
+    .certificate-container { max-width: 100%; }
+    .certificate-card { padding: 14px; }
+    .cert-border { padding: 15px 10px; }
+    .cert-header { font-size: 11px; letter-spacing: 1px; }
+    .cert-name { font-size: 2.1rem; margin: 4px 0; }
+    .cert-body { font-size: 11.5px; line-height: 1.5; }
+    .cert-footer { margin-top: 20px; font-size: 10.5px; }
+    .signature-name { font-size: 1.25rem; }
+}
+
+/* ==========================================
+ANIMASI HUJAN KONFETI SELEBRASI 🎉
+========================================== */
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 99999;
+    pointer-events: none;
+    border-radius: 2px;
+    animation: fallAndSpin linear forwards;
+}
+
+@keyframes fallAndSpin {
+    0% { 
+        transform: translateY(0) rotate(0deg) translateX(0); 
+        opacity: 1; 
     }
-
-    .slide h1{
-        font-size:28px;
+    50% { 
+        transform: translateY(50vh) rotate(360deg) translateX(25px); 
+        opacity: 1; 
     }
-
-    .slide h2{
-        font-size:22px;
-    }
-
-    .slide p{
-        font-size:14px;
-    }
-
-    #typing{
-        font-size:16px;
-    }
-
-    #daysCounter{
-        font-size:42px;
-    }
-
-    #proudText{
-        font-size:22px;
-    }
-
-    button{
-        padding:12px 22px;
-        font-size:14px;
-    }
-
-    .polaroid-card {
-        width: 95%;
-        max-width: 290px;
-        padding: 10px 10px 20px 10px;
-    }
-
-    .polaroid-img {
-        max-height: 240px;
-    }
-
-    .polaroid-caption {
-        font-size: 13px;
-    }
-
-    .letter-content{
-        max-height:55vh;
-    }
-
-    .music-indicator{
-        font-size:11px;
-        bottom:10px;
-        right:10px;
+    100% { 
+        transform: translateY(105vh) rotate(720deg) translateX(-25px); 
+        opacity: 0; 
     }
 }
