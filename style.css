@@ -256,11 +256,11 @@ ALBUM SCRAPBOOK POLAROID
 
 .polaroid-card {
     background: #fbfbfb;
-    padding: 14px 14px 30px 14px;
+    padding: 16px 16px 35px 16px; /* Menambah padding bawah agar ruang tulisan lebih lega */
     border-radius: 2px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    width: 90%;
-    max-width: 310px;
+    width: 98%;           /* Diperlebar agar memenuhi layar */
+    max-width: 400px;     /* Ditingkatkan dari 310px ke 360px */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -289,7 +289,7 @@ ALBUM SCRAPBOOK POLAROID
 
 .polaroid-img {
     width: 100%;
-    height: 260px;
+    height: 450px;        /* Ditingkatkan dari 260px ke 300px agar foto lebih besar */
     object-fit: cover;
     border: 1px solid #f0f0f0;
     cursor: pointer;
@@ -516,13 +516,13 @@ AESTHETIC CERTIFICATE STYLE 📜
 .cert-date p {
     color: #665255 !important;
     font-weight: 500;
-    font-size: 9px;
+    font-size: 8px;
 }
 
 .cert-sign p {
     text-align: center;
     color: #665255 !important;
-    font-size: 9px;
+    font-size: 8px;
 }
 
 .signature-name {
