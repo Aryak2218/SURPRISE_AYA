@@ -260,7 +260,7 @@ ALBUM SCRAPBOOK POLAROID
     border-radius: 4px; /* Sedikit dilunakkan dari 2px ke 4px agar lebih elegan */
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
     width: 95%;           
-    max-width: 450px;     /* Saya sarankan 450px agar tidak terlalu lebar di layar besar */
+    max-width: 250px;     /* Saya sarankan 450px agar tidak terlalu lebar di layar besar */
     position: relative;
     display: flex;
     flex-direction: column;
